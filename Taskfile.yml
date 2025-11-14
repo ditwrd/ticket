@@ -1,0 +1,19 @@
+# https://taskfile.dev
+
+version: "3"
+
+tasks:
+  dev:
+    desc: "Start development server with hot reload"
+    dir: "api"
+    cmds:
+      - air
+    preconditions:
+      - { msg: "air must be installed", sh: "command -v air" }
+  dev-ui:
+    desc: "Start frontend development server"
+    dir: "ui"
+    cmds:
+      - bun dev
+    preconditions:
+      - { msg: "bun must be installed", sh: "command -v bun" }
